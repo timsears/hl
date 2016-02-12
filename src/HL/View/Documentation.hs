@@ -66,6 +66,7 @@ tutorials =
   where
     tutorialLinks =
        [("A Gentle Introduction to Haskell","https://www.haskell.org/tutorial/")
+       ,("Happy Learn Haskell Tutorial","https://www.happylearnhaskelltutorial.com/")
        ,("Yet Another Haskell Tutorial","http://en.wikibooks.org/wiki/Haskell/YAHT/Preamble")
        ,("Write Yourself a Scheme in 48 Hours","http://en.wikibooks.org/wiki/Write_Yourself_a_Scheme_in_48_Hours")
        ,("Learning Haskell","http://learn.hfm.io")]
