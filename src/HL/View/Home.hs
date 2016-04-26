@@ -159,5 +159,15 @@ sponsors =
                                  " has teamed up to provide Haskell.org with redundant, scalable object-storage \
                                  \through their Dream Objects service." )))
          row_ (do span6_ [class_ "col-md-6"]
+                         (p_ (do strong_ (a_ [href_ "http://awakenetworks.com/"] "Awake Networks")
+                                 " is building a next generation network security and analytics platform. They are \
+                                 \a proud sponsor of Haskell Summer of Code and contribute broadly to the Haskell \
+                                 \community." ))
+                  span6_ [class_ "col-md-6"]
+                         (p_ (do strong_ (a_ [href_ "http://haskellbook.com/"] "http://haskellbook.com/")
+                                 " is a proud sponsor of the Summer of Haskell and provides a complete and \
+                                 \up-to-date resource for learning Haskell, suitable whether you're completely new \
+                                 \to Haskell or are at an intermediate level and want to deepen your understanding.")))
+         row_ (do span6_ [class_ "col-md-6"]
                          (p_ (do strong_ (a_ [href_ "https://webmon.com"] "Webmon")
                                  " provides monitoring and escalation for core haskell.org infrastructure." )))
