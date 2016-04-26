@@ -165,10 +165,10 @@ sponsors =
                                  (a_ [href_ "https://summer.haskell.org/"] "Summer of Haskell")
                                  " and contribute broadly to the Haskell community." ))
                   span6_ [class_ "col-md-6"]
-                         (p_ (do strong_ (a_ [href_ "http://haskellbook.com/"] "http://haskellbook.com/")
+                         (p_ (do strong_ (a_ [href_ "http://haskellbook.com/"] "Haskell Book")
                                  " is a proud sponsor of the "
                                  (a_ [href_ "https://summer.haskell.org/"] "Summer of Haskell")
-                                 " and provides a complete and up-to-date resource for learning Haskell, suitable\
+                                 " and provides a complete and up-to-date resource for learning Haskell -- suitable \
                                  \whether you're completely new to Haskell or are at an intermediate level and want \
                                  \to deepen your understanding.")))
          row_ (do span6_ [class_ "col-md-6"]
