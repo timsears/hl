@@ -18,7 +18,7 @@ documentationV =
     (\url ->
        container_
          (row_
-            (span12_ [class_ "col-md-12"]
+            (span12_ [class_ "col-sm-12"]
                (do h1_ "Documentation"
                    books
                    courses

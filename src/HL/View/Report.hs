@@ -19,7 +19,7 @@ reportNodeV mode year inner =
     [DocumentationR,ReportR,ReportModeR mode year]
     (T.pack (show year) <>
      " report")
-    (const (container_ (row_ (span12_ [class_ "col-md-12"] inner))))
+    (const (container_ (row_ (span12_ [class_ "col-sm-12"] inner))))
     (\_ url ->
        do link_ [rel_ "stylesheet",type_ "text/css",href_ (url (StaticR css_report_css))]
           script_ [src_ (url (StaticR js_highlight_pack_js))] ""
@@ -32,7 +32,7 @@ reportV =
     (\url ->
        container_
          (row_
-            (span12_ [class_ "col-md-12"]
+            (span12_ [class_ "col-sm-12"]
                (do h1_ "Report"
                    p_ "There are two ways of viewing the report, either:"
                    ul_ (do li_ (do a_ [href_ (url (ReportModeR Mono 2010))]

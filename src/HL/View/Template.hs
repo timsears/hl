@@ -63,12 +63,9 @@ skeleton ptitle innerhead innerbody bodyender mroute url =
          meta_ [name_ "description",
                 content_ "The Haskell purely functional programming language home page."]
          link_ [rel_ "shortcut icon",href_ (url (StaticR img_favicon_ico))]
-         linkcss "https://fonts.googleapis.com/css?family=Open+Sans"
+         linkcss "https://fonts.googleapis.com/css?family=Source+Sans+Pro|Raleway:700,900|Ubuntu+Mono:400"
          styles url
-                [StaticR css_bootstrap_min_css
-                ,StaticR css_haskell_font_css
-                ,StaticR css_hscolour_css
-                ,StaticR css_hl_css]
+                [StaticR css_hl_css]
          innerhead mroute url
     bodyinner =
       do div_ [class_ "wrap"] (innerbody mroute url)
@@ -110,23 +107,27 @@ linkcss uri =
 navigation :: Bool -> [Route App] -> FromLucid App
 navigation showBrand crumbs mroute url =
   nav_ [class_ "navbar navbar-default"]
-       (div_ [class_ "container"]
-             (do when showBrand brand
-                 items))
+      (div_ [class_ "container"]
+          (do div_ [class_ "navbar-header"]
+                   (do button_ [class_ "navbar-toggle collapsed", data_ "toggle" "collapse", data_ "target" "#haskell-menu"]
+                               (do span_ [class_ "sr-only"] ""
+                                   span_ [class_ "icon-bar"] ""
+                                   span_ [class_ "icon-bar"] ""
+                                   span_ [class_ "icon-bar"] "")
+                       when showBrand brand)
+              items))
   where items =
-          div_ [class_ "collapse navbar-collapse"]
-               (ul_ [class_ "nav navbar-nav"]
+          div_ [class_ "collapse navbar-collapse", id_ "haskell-menu"]
+               (ul_ [class_ "nav navbar-nav navbar-right"]
                     (mapM_ item [DownloadsR,CommunityR,DocumentationR,NewsR]))
           where item :: Route App -> Html ()
                 item route =
                   li_ [class_ "active" | Just route == mroute || elem route crumbs]
                       (a_ [href_ (url route)]
                           (toHtml (toHuman route)))
-        brand =
-          div_ [class_ "navbar-header"]
-               (a_ [class_ "navbar-brand",href_ (url HomeR)]
+        brand = a_ [class_ "navbar-brand",href_ (url HomeR)]
                    (do logo
-                       "Haskell"))
+                       "Haskell")
 
 -- | The logo character in the right font. Style it with an additional
 -- class or wrapper as you wish.
@@ -159,7 +160,7 @@ footer url r =
                       wikiLicense (Nothing :: Maybe Text)
                     _ -> hlCopy)))
   where hlCopy =
-          do span_ [class_ "item"] "\169 2014\8211\&2015 haskell.org"
+          do span_ [class_ "item"] "\169 2014\8211\&2016 haskell.org"
              span_ [class_ "item footer-contribute"]
                    (do "Got changes to contribute? "
                        a_ [href_ "https://github.com/haskell-infra/hl"] "Fork or comment on Github")

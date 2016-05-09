@@ -15,7 +15,7 @@ features :: Html ()
 features =
   div_ [class_ "features"]
        (container_
-          (do h1_ "Features"
+          (do h2_ "Features"
               row_ (do span6_ [class_ "col-md-6"] statically
                        span6_ [class_ "col-md-6"] purefunc)
               row_ (do span6_ [class_ "col-md-6"] inference
@@ -25,14 +25,14 @@ features =
 
 purefunc :: Html ()
 purefunc =
-  do h2_ "Purely functional"
+  do h3_ "Purely functional"
      p_ "Every function in Haskell is a function in the mathematical sense (i.e., \"pure\"). \
         \Even side-effecting IO operations are but a description of what to do, produced \
         \by pure code. There are no statements or instructions, only expressions which \
         \cannot mutate variables (local or global) nor access state like time or random \
         \numbers."
-     p_ [class_ "expand"] (a_ "Click to expand")
-     div_ [class_ "expandable"] $ do
+     p_ (a_ [data_ "toggle" "collapse", href_ "#collapse-functional"] "Click to expand")
+     div_ [class_ "collapse", id_ "collapse-functional"] $ do
        p_ (do "The following function takes an integer and returns an integer. "
               "By the type it cannot do any side-effects whatsoever, it cannot\
               \ mutate any of its arguments.")
@@ -55,14 +55,14 @@ purefunc =
 
 statically :: Html ()
 statically =
-  do h2_ "Statically typed"
+  do h3_ "Statically typed"
      p_ "Every expression in Haskell has a type which is determined at compile time. \
        \All the types composed together by function application have to match up. If \
        \they don't, the program will be rejected by the compiler. Types become not \
        \only a form of guarantee, but a language for expressing the construction \
        \of programs."
-     p_ [class_ "expand"] (a_ "Click to expand")
-     div_ [class_ "expandable"] $ do
+     p_ (a_ [data_ "toggle" "collapse", href_ "#collapse-statically-typed"] "Click to expand")
+     div_ [class_ "collapse", id_ "collapse-statically-typed"] $ do
        p_ "All Haskell values have a type:"
        haskellPre "char = 'a'    :: Char\n\
                   \int = 123     :: Int\n\
@@ -79,14 +79,14 @@ statically =
 
 concurrent :: Html ()
 concurrent =
-  do h2_ "Concurrent"
+  do h3_ "Concurrent"
      p_ "Haskell lends itself well to concurrent programming due to its explicit \
        \handling of effects. Its flagship compiler, GHC, comes with a high-\
        \performance parallel garbage collector and light-weight concurrency \
        \library containing a number of useful concurrency primitives and \
        \abstractions."
-     p_ [class_ "expand"] (a_ "Click to expand")
-     div_ [class_ "expandable"] $ do
+     p_ (a_ [data_ "toggle" "collapse", href_ "#collapse-concurrent"] "Click to expand")
+     div_ [class_ "collapse", id_ "collapse-concurrent"] $ do
        p_ "Easily launch threads and communicate with the standard library:"
        haskellPre "main = do\n\
                   \  done <- newEmptyMVar\n\
@@ -114,13 +114,13 @@ concurrent =
 
 inference :: Html ()
 inference =
-  do h2_ "Type inference"
+  do h3_ "Type inference"
      p_ "You don't have to explicitly write out every type in a Haskell program. \
        \Types will be inferred by unifying every type bidirectionally. However, you \
        \can write out types if you choose, or ask the compiler to write them for you \
        \for handy documentation."
-     p_ [class_ "expand"] (a_ "Click to expand")
-     div_ [class_ "expandable"] $ do
+     p_ (a_ [data_ "toggle" "collapse", href_ "#collapse-type-inference"] "Click to expand")
+     div_ [class_ "collapse", id_ "collapse-type-inference"] $ do
        p_ "This example has a type signature for every binding:"
        haskellPre "main :: IO ()\n\
                   \main = do line :: String <- getLine\n\
@@ -152,14 +152,14 @@ inference =
 
 lazy :: Html ()
 lazy =
-  do h2_ "Lazy"
+  do h3_ "Lazy"
      p_ "Functions don't evaluate their arguments. This means that programs \
        \can compose together very well, with the ability to write control \
        \constructs (such as if/else) just by writing normal functions. The purity \
        \of Haskell code makes it easy to fuse chains of functions together, allowing \
        \for performance benefits."
-     p_ [class_ "expand"] $ a_ "Click to expand"
-     div_ [class_ "expandable"] $ do
+     p_ (a_ [data_ "toggle" "collapse", href_ "#collapse-lazy"] "Click to expand")
+     div_ [class_ "collapse", id_ "collapse-lazy"] $ do
        p_ "Define control structures easily:"
        haskellPre "when p m = if p then m else return ()\n\
                   \main = do args <- getArgs\n\
@@ -185,11 +185,11 @@ lazy =
 
 packages :: Html ()
 packages =
-  do h2_ "Packages"
+  do h3_ "Packages"
      p_ "Open source contribution to Haskell is very active with a wide range \
         \of packages available on the public package servers."
-     p_ [class_ "expand"] (a_ "Click to expand")
-     div_ [class_ "expandable"] $ do
+     p_ (a_ [data_ "toggle" "collapse", href_ "#collapse-packages"] "Click to expand")
+     div_ [class_ "collapse", id_ "collapse-packages"] $ do
        p_ "There are 6,954 packages freely available. Here is a sample of the \
          \most common ones:"
        table_ [class_ "packages"] $

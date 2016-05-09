@@ -37,7 +37,7 @@ wikiV urlr result =
     (\_ ->
        container_
          (row_
-            (span12_ [class_ "col-md-12"]
+            (span12_ [class_ "col-sm-12"]
                (case result of
                   Left err ->
                     do h1_  "Wiki page retrieval problem!"
