@@ -126,13 +126,12 @@ navigation showBrand crumbs mroute url =
                       (a_ [href_ (url route)]
                           (toHtml (toHuman route)))
         brand = a_ [class_ "navbar-brand",href_ (url HomeR)]
-                   (do logo
-                       "Haskell")
+                   (do logo url)
 
 -- | The logo character in the right font. Style it with an additional
 -- class or wrapper as you wish.
-logo :: Html ()
-logo = span_ [class_ "logo"] "\57344"
+logo :: (Route App -> Text) -> Html ()
+logo url = span_ [class_ "logo"] (do img_ [src_ (url (StaticR img_haskell_logo_svg))])
 
 -- | Breadcrumb.
 bread :: (Route App -> Text) -> [Route App] -> Html ()

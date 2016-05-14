@@ -31,7 +31,7 @@ purefunc =
         \by pure code. There are no statements or instructions, only expressions which \
         \cannot mutate variables (local or global) nor access state like time or random \
         \numbers."
-     p_ (a_ [data_ "toggle" "collapse", href_ "#collapse-functional"] "Click to expand")
+     p_ [class_ "text-center"] (a_ [data_ "toggle" "collapse", href_ "#collapse-functional", class_ "btn btn-xs btn-primary"] "Click to expand")
      div_ [class_ "collapse", id_ "collapse-functional"] $ do
        p_ (do "The following function takes an integer and returns an integer. "
               "By the type it cannot do any side-effects whatsoever, it cannot\
@@ -61,7 +61,7 @@ statically =
        \they don't, the program will be rejected by the compiler. Types become not \
        \only a form of guarantee, but a language for expressing the construction \
        \of programs."
-     p_ (a_ [data_ "toggle" "collapse", href_ "#collapse-statically-typed"] "Click to expand")
+     p_ [class_ "text-center"] (a_ [data_ "toggle" "collapse", href_ "#collapse-statically-typed", class_ "btn btn-xs btn-primary"] "Click to expand")
      div_ [class_ "collapse", id_ "collapse-statically-typed"] $ do
        p_ "All Haskell values have a type:"
        haskellPre "char = 'a'    :: Char\n\
@@ -85,7 +85,7 @@ concurrent =
        \performance parallel garbage collector and light-weight concurrency \
        \library containing a number of useful concurrency primitives and \
        \abstractions."
-     p_ (a_ [data_ "toggle" "collapse", href_ "#collapse-concurrent"] "Click to expand")
+     p_ [class_ "text-center"] (a_ [data_ "toggle" "collapse", href_ "#collapse-concurrent", class_ "btn btn-xs btn-primary"] "Click to expand")
      div_ [class_ "collapse", id_ "collapse-concurrent"] $ do
        p_ "Easily launch threads and communicate with the standard library:"
        haskellPre "main = do\n\
@@ -119,7 +119,7 @@ inference =
        \Types will be inferred by unifying every type bidirectionally. However, you \
        \can write out types if you choose, or ask the compiler to write them for you \
        \for handy documentation."
-     p_ (a_ [data_ "toggle" "collapse", href_ "#collapse-type-inference"] "Click to expand")
+     p_ [class_ "text-center"] (a_ [data_ "toggle" "collapse", href_ "#collapse-type-inference", class_ "btn btn-xs btn-primary"] "Click to expand")
      div_ [class_ "collapse", id_ "collapse-type-inference"] $ do
        p_ "This example has a type signature for every binding:"
        haskellPre "main :: IO ()\n\
@@ -158,7 +158,7 @@ lazy =
        \constructs (such as if/else) just by writing normal functions. The purity \
        \of Haskell code makes it easy to fuse chains of functions together, allowing \
        \for performance benefits."
-     p_ (a_ [data_ "toggle" "collapse", href_ "#collapse-lazy"] "Click to expand")
+     p_ [class_ "text-center"] (a_ [data_ "toggle" "collapse", href_ "#collapse-lazy", class_ "btn btn-xs btn-primary"] "Click to expand")
      div_ [class_ "collapse", id_ "collapse-lazy"] $ do
        p_ "Define control structures easily:"
        haskellPre "when p m = if p then m else return ()\n\
@@ -188,7 +188,7 @@ packages =
   do h3_ "Packages"
      p_ "Open source contribution to Haskell is very active with a wide range \
         \of packages available on the public package servers."
-     p_ (a_ [data_ "toggle" "collapse", href_ "#collapse-packages"] "Click to expand")
+     p_ [class_ "text-center"] (a_ [data_ "toggle" "collapse", href_ "#collapse-packages", class_ "btn btn-xs btn-primary"] "Click to expand")
      div_ [class_ "collapse", id_ "collapse-packages"] $ do
        p_ "There are 6,954 packages freely available. Here is a sample of the \
          \most common ones:"

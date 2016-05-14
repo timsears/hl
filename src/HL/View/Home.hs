@@ -20,14 +20,15 @@ homeV vids =
           header url
           br_ []
           br_ []
+          br_ []
           try url
+          br_ []
           community url vids
           features
+          br_ []
           sponsors
           transition
-          events
-          div_ [class_ "mobile"] $
-               (navigation False [] cur url))
+          events)
     (\_ url ->
        scripts url
                [js_jquery_console_js
@@ -44,16 +45,14 @@ header url =
                             (do branding
                                 summation))
                span6_ [class_ "col-md-6"]
-                      (div_ [class_ "branding"]
+                      (div_ [class_ "branding sample"]
                             (do tag
                                 sample)))))
-  where branding = h1_ [class_ "name"] (do
-                                            img_ [src_ (url (StaticR img_logo_png))]
-                                            span_ "Haskell"
-                                       )
+  where branding = h1_ [class_ "name"] (do img_ [src_ (url (StaticR img_haskell_logo_svg))])
         summation =
           h4_ [class_ "summary"] "An advanced purely-functional programming language"
-        tag = h3_ [class_ "tag"] "Declarative, statically typed code."
+        tag = do br_ []
+                 h4_ [class_ "tag"] "Declarative, statically typed code."
         sample =
           div_ [class_ "code-sample",title_ "This example is contrived in order to demonstrate what Haskell looks like, including: (1) where syntax, (2) enumeration syntax, (3) pattern matching, (4) consing as an operator, (5) list comprehensions, (6) infix functions. Don't take it seriously as an efficient prime number generator."]
                (haskellPre codeSample)
@@ -69,14 +68,17 @@ codeSample =
 -- | Try Haskell section.
 try :: (Route App -> Text) -> Html ()
 try _ =
-  div_ [class_ "try",onclick_ "tryhaskell.controller.inner.click()"]
-       (container_
-          (row_ (do span12_ [class_ "col-sm-12"] (hr_ [])
-                    span6_ [class_ "col-sm-6"] repl
-                    span6_ [class_ "col-sm-6",id_ "guide"] (return ())
-                           )))
+  div_ [class_ "pattern-bg"] $
+    container_ $
+      do row_ (span12_ [class_ "col-sm-12"]
+                       (div_ [class_ "try",onclick_ "tryhaskell.controller.inner.click()"]
+                             (container_
+                                (row_ (do span6_ [class_ "col-sm-6"] repl
+                                          span6_ [class_ "col-sm-6",id_ "guide"] (return ())
+                                      )))))
+
   where repl =
-          do h2_ "Try it"
+          do h2_ "Try it!"
              noscript_ (span6_ (div_ [class_ "alert alert-warning"]
                     "Try haskell requires Javascript to be enabled."))
              span6_ [hidden_ "", id_ "cookie-warning"]
@@ -90,29 +92,20 @@ try _ =
 community :: (Route App -> Text) -> [(Text, Text, Text)] -> Html ()
 community url vids =
   div_ [id_ "community-wrapper"]
-       (do div_ [class_ "community",background url img_community_jpg]
-                (do container_
-                      [id_ "tagline"]
-                      (row_ (span8_ [class_ "col-sm-12 text-center"]
-                                    (do br_ []
-                                        br_ []
-                                        h2_ "An open source community effort for over 20 years"
-                                        p_ [class_ "learn-more"]
-                                           (a_ [class_ "btn btn-link", href_ (url CommunityR)] "Learn more"))))
-                    container_
-                      [id_ "video-description"]
-                      (row_ (span8_ [class_ "col-sm-8"]
-                                    (do h2_ (a_ [id_ "video-anchor"] "<title here>")
-                                        p_ (a_ [id_ "video-view"] "View the video now \8594")))))
-           div_ [class_ "videos"]
+       (do div_ [class_ "videos"]
                 (container_ (row_ (span12_ [class_ "col-sm-12"]
                                            (do h2_ "Videos"
-                                               ul_ [class_ "list-unstyled list-inline"] (forM_ vids vid)
+                                               br_ []
+                                               row_ (span12_ [class_ "col-sm-12"]
+                                                             (row_ [class_ "row-flex"] (forM_ vids vid)))
                                            )))))
   where vid :: (Text,Text,Text) -> Html ()
         vid (n,u,thumb) =
-          li_ (a_ [class_ "img-thumbnail",href_ u,title_ n]
-                  (img_ [src_ thumb]))
+          span3_ [class_ "col-sm-2"]
+                 (a_ [class_ "thumbnail", href_ u, title_ n]
+                                    (do img_ [class_ "img-responsive", src_ thumb]
+                                        div_ [class_ "caption"]
+                                             (h5_ (toHtml (n :: Text)))))
 
 -- | Information for people to help transition from the old site to the new locations.
 transition :: Html ()
@@ -120,9 +113,11 @@ transition =
   div_ [class_ "transition"]
        (container_
           (row_ (span6_ [class_ "col-sm-6"]
-                        (do h2_ "Psst! Looking for the wiki?"
+                        (do br_ []
+                            h2_ "Psst! Looking for the wiki?"
                             p_ (do "This is the new Haskell home page! The wiki has moved to "
-                                   a_ [href_ "https://wiki.haskell.org"] "wiki.haskell.org.")))))
+                                   a_ [href_ "https://wiki.haskell.org"] "wiki.haskell.org.")
+                            br_ []))))
 
 -- | Events section.
 -- TODO: Take events section from Haskell News?
@@ -133,7 +128,7 @@ events =
 -- | List of sponsors.
 sponsors :: Html ()
 sponsors =
-  div_ [class_ "sponsors"] $
+  div_ [class_ "sponsors pattern-bg"] $
     container_ $
       do row_ (span6_ [class_ "col-sm-6"] (h2_ "Sponsors"))
          row_ (do span6_ [class_ "col-sm-6"]
