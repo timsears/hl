@@ -19,8 +19,8 @@ homeV vids =
        do navigation False [] Nothing url
           header url
           br_ []
-          br_ []
-          br_ []
+          br_ [class_ "hidden-xs hidden-sm"]
+          br_ [class_ "hidden-xs hidden-sm"]
           try url
           br_ []
           community url vids
@@ -40,7 +40,9 @@ header :: (Route App -> Text) -> Html ()
 header url =
   div_ [class_ "header"] $
   (container_
-     (row_ (do span6_ [class_ "col-md-6"]
+     (row_ (do span12_ [class_ "col-sm-12 hidden-xs"]
+                       (br_ [])
+               span6_ [class_ "col-md-6"]
                       (div_ [class_ "branding"]
                             (do branding
                                 summation))
@@ -48,10 +50,11 @@ header url =
                       (div_ [class_ "branding sample"]
                             (do tag
                                 sample)))))
-  where branding = h1_ [class_ "name"] (do img_ [src_ (url (StaticR img_haskell_logo_svg))])
+  where branding = do br_ [class_ "hidden-xs"]
+                      img_ [src_ (url (StaticR img_haskell_logo_svg)), class_ "img-responsive"]
         summation =
           h4_ [class_ "summary"] "An advanced purely-functional programming language"
-        tag = do br_ []
+        tag = do br_ [class_ "visible-xs visible-sm"]
                  h4_ [class_ "tag"] "Declarative, statically typed code."
         sample =
           div_ [class_ "code-sample",title_ "This example is contrived in order to demonstrate what Haskell looks like, including: (1) where syntax, (2) enumeration syntax, (3) pattern matching, (4) consing as an operator, (5) list comprehensions, (6) infix functions. Don't take it seriously as an efficient prime number generator."]
@@ -101,7 +104,7 @@ community url vids =
                                            )))))
   where vid :: (Text,Text,Text) -> Html ()
         vid (n,u,thumb) =
-          span3_ [class_ "col-sm-2"]
+          span3_ [class_ "col-xs-6 col-sm-3 col-md-2"]
                  (a_ [class_ "thumbnail", href_ u, title_ n]
                                     (do img_ [class_ "img-responsive", src_ thumb]
                                         div_ [class_ "caption"]

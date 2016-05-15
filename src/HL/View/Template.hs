@@ -159,17 +159,26 @@ footer url r =
                       wikiLicense (Nothing :: Maybe Text)
                     _ -> hlCopy)))
   where hlCopy =
-          do span_ [class_ "item"] "\169 2014\8211\&2016 haskell.org"
-             span_ [class_ "item footer-contribute"]
-                   (do "Got changes to contribute? "
-                       a_ [href_ "https://github.com/haskell-infra/hl"] "Fork or comment on Github")
-             span_ [class_ "pull-right"]
-                   (do span_ "Proudly hosted by "
-                       a_ [href_ "https://www.rackspace.com/"]
-                          (img_ [src_ (url (StaticR img_rackspace_svg))
-                                ,alt_ "rackspace"
-                                ,height_ "20"
-                                ,width_ "20"]))
+          do container_
+                       (row_ (do span3_ [class_ "col-sm-4 col-md-3"]
+                                        (span_ [class_ "item"] "\169 2014\8211\&2016 haskell.org")
+                                 span12_ [class_ "col-xs-12 visible-xs"] (br_ [])
+                                 span8_ [class_ "col-sm-4 col-md-6 text-center"]
+                                        (do br_ [class_ "visible-xs"]
+                                            span_ [class_ "item"] "Got changes to contribute? "
+                                            br_ [class_ "visible-xs"]
+                                            a_ [href_ "https://github.com/haskell-infra/hl"] "Fork or comment on Github"
+                                            br_ [class_ "visible-xs"])
+                                 span12_ [class_ "col-xs-12 visible-xs"] (br_ [])
+                                 span3_ [class_ "col-sm-4 col-md-3 text-right"]
+                                        ((do span_ "Proudly hosted by "
+                                             a_ [href_ "https://www.rackspace.com/"]
+                                                (img_ [src_ (url (StaticR img_rackspace_svg))
+                                                      ,alt_ "rackspace"
+                                                      ,height_ "20"
+                                                      ,width_ "20"])))
+                                 span12_ [class_ "col-sm-12"] (br_ [])
+                       ))
         wikiLicense :: Maybe Text -> Html ()
         wikiLicense page =
           do span_ [class_ "item"] wikiLink
