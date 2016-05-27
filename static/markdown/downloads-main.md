@@ -127,7 +127,9 @@ For help with Haskell and GHC in general, see the links mentioned
 
 <a name="platform"></a>The Haskell Platform is a self-contained, all-in-one
 installer. After download, you will have everything necessary to build Haskell
-programs against a core set of useful libraries.
+programs against a core set of useful libraries. It comes in both minimal versions
+with tools but no libraries outside of GHC core, or full versions, which include a
+broader set of globally installed libraries.
 
 ### What you get
 
