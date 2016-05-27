@@ -89,13 +89,13 @@ Windows), building and registering libraries, and more.
 
 ### How to get it
 
-The [install and upgrade page](docs.haskellstack.org/en/stable/install_and_upgrade/)
+The [install and upgrade page](https://docs.haskellstack.org/en/stable/install_and_upgrade/)
 describes how to download Stack on various platforms, although the main
 three are repeated here:
 
-- [Ubuntu Linux](docs.haskellstack.org/en/stable/install_and_upgrade/#ubuntu)
-- [OS X](docs.haskellstack.org/en/stable/install_and_upgrade/#os-x)
-- [Windows](docs.haskellstack.org/en/stable/install_and_upgrade/#windows)
+- [Ubuntu Linux](https://docs.haskellstack.org/en/stable/install_and_upgrade/#ubuntu)
+- [OS X](https://docs.haskellstack.org/en/stable/install_and_upgrade/#os-x)
+- [Windows](https://docs.haskellstack.org/en/stable/install_and_upgrade/#windows)
 
 Instructions for other Linux distributions, including Debian, Fedora, Red Hat,
 Nix OS, and Arch Linux, are also available.
@@ -108,7 +108,7 @@ For help with Haskell and GHC in general, see the links mentioned
 - The [README](https://github.com/commercialhaskell/stack/#readme) offers a
   general overview, and help with installation.
 - There is an
-  [in-depth guide](docs.haskellstack.org)
+  [in-depth guide](https://docs.haskellstack.org)
   to using Stack.
 - [Getting started with Stack](http://seanhess.github.io/2015/08/04/practical-haskell-getting-started.html)
   introduces how to build new projects using Stack.
@@ -136,7 +136,7 @@ programs against a core set of useful libraries.
   new packages, and by default fetches from
   [Hackage](https://hackage.haskell.org/), the central Haskell package
   repository.
-- the [Stack](docs.haskellstack.org) tool for developing projects
+- the [Stack](https://docs.haskellstack.org) tool for developing projects
 - Support for profiling and code coverage analysis
 - 35 core & widely-used [packages](https://www.haskell.org/platform/contents.html)
 
