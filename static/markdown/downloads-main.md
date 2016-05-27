@@ -89,13 +89,13 @@ Windows), building and registering libraries, and more.
 
 ### How to get it
 
-The [install and upgrade page](https://github.com/commercialhaskell/stack/blob/master/doc/install_and_upgrade.md)
+The [install and upgrade page](docs.haskellstack.org/en/stable/install_and_upgrade/)
 describes how to download Stack on various platforms, although the main
 three are repeated here:
 
-- [Ubuntu Linux](https://github.com/commercialhaskell/stack/blob/master/doc/install_and_upgrade.md#ubuntu)
-- [OS X](https://github.com/commercialhaskell/stack/blob/master/doc/install_and_upgrade.md#os-x)
-- [Windows](https://github.com/commercialhaskell/stack/blob/master/doc/install_and_upgrade.md#windows)
+- [Ubuntu Linux](docs.haskellstack.org/en/stable/install_and_upgrade/#ubuntu)
+- [OS X](docs.haskellstack.org/en/stable/install_and_upgrade/#os-x)
+- [Windows](docs.haskellstack.org/en/stable/install_and_upgrade/#windows)
 
 Instructions for other Linux distributions, including Debian, Fedora, Red Hat,
 Nix OS, and Arch Linux, are also available.
@@ -108,7 +108,7 @@ For help with Haskell and GHC in general, see the links mentioned
 - The [README](https://github.com/commercialhaskell/stack/#readme) offers a
   general overview, and help with installation.
 - There is an
-  [in-depth guide](https://github.com/commercialhaskell/stack/blob/master/doc/GUIDE.md)
+  [in-depth guide](docs.haskellstack.org)
   to using Stack.
 - [Getting started with Stack](http://seanhess.github.io/2015/08/04/practical-haskell-getting-started.html)
   introduces how to build new projects using Stack.
@@ -136,6 +136,7 @@ programs against a core set of useful libraries.
   new packages, and by default fetches from
   [Hackage](https://hackage.haskell.org/), the central Haskell package
   repository.
+- the [Stack](docs.haskellstack.org) tool for developing projects
 - Support for profiling and code coverage analysis
 - 35 core & widely-used [packages](https://www.haskell.org/platform/contents.html)
 
@@ -184,7 +185,7 @@ LTS Haskell is a stackage-based long-term support set of packages which build an
 
 Stackage is a nightly generated stable repository of snapshots of package sets in which only packages which build and pass tests together are bundled together into a snapshot.
 
-[Get Stackage Nightly →](http://www.stackage.org/nightly-2015-09-29)
+[Get Stackage Nightly →](http://www.stackage.org/nightly)
 
 ### From source control repositories
 
