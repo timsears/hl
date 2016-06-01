@@ -65,7 +65,7 @@ skeleton ptitle innerhead innerbody bodyender mroute url =
          link_ [rel_ "shortcut icon",href_ (url (StaticR img_favicon_ico))]
          linkcss "https://fonts.googleapis.com/css?family=Source+Sans+Pro|Raleway:700,900|Ubuntu+Mono:400"
          styles url
-                [StaticR css_hl_css]
+                [StaticR css_hl_min_css]
          innerhead mroute url
     bodyinner =
       do div_ [class_ "wrap"] (innerbody mroute url)

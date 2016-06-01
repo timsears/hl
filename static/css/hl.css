@@ -4492,7 +4492,7 @@ pre .hs-keyglyph {
   word-wrap: break-word; }
 
 .jquery-console-prompt-label {
-  color: #b764b2;
+  color: #db83ed;
   font-weight: bold; }
 
 .jquery-console-prompt-box {
@@ -4553,7 +4553,7 @@ pre .hs-keyglyph {
   -webkit-box-shadow: 0 0 4em rgba(0, 0, 0, 0.25) inset;
           box-shadow: 0 0 4em rgba(0, 0, 0, 0.25) inset; }
   .pattern-bg a {
-    color: #be6ece; }
+    color: #db83ed; }
     .pattern-bg a:hover {
       color: #b663b1; }
   .pattern-bg code {
@@ -4612,5 +4612,3 @@ pre .hs-keyglyph {
             flex: 0 1 auto; }
     .row-flex > div[class*='col-'] .thumbnail {
       width: 100%; }
-
-/*# sourceMappingURL=hl.css.map */
