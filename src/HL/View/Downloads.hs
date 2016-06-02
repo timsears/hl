@@ -12,7 +12,7 @@ import HL.View.Template
 downloadsFromMarkdown :: Html () -> FromLucid App
 downloadsFromMarkdown md =
   template [] "Downloads"
-    (\_ -> container_ (row_  (span12_ [class_ "col-md-12"]
+    (\_ -> container_ (row_  (span12_ [class_ "col-sm-12"]
                                       (do h1_ (toHtml ("Downloads" :: String))
                                           md))))
 
@@ -26,7 +26,7 @@ downloadsForV os autoInstall manualInstall =
     (\_ ->
        container_
          (row_
-            (span12_ [class_ "col-md-12"]
+            (span12_ [class_ "col-sm-12"]
                (do h1_ (toHtml ("Downloads for " <> toHuman os))
                    autoInstall
                    when (os == Linux)

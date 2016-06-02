@@ -17,7 +17,7 @@ communityV =
     (\url ->
        container_
          (row_
-            (span12_ [class_ "col-md-12"]
+            (span12_ [class_ "col-sm-12"]
                (do h1_ "Community"
                    p_
                      "Haskellers interact, talk and collaborate across several mediums \

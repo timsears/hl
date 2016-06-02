@@ -21,7 +21,6 @@ data-files:          static/css/*.css
                      static/fonts/glyphicons-halflings-regular.svg
                      static/fonts/glyphicons-halflings-regular.eot
                      static/fonts/glyphicons-halflings-regular.woff
-                     static/css/haskell.font.css
                      static/img/*.ico
                      static/img/*.jpg
                      static/img/*.png

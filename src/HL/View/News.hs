@@ -15,5 +15,5 @@ newsV inner =
            "News"
            (\_ ->
               container_
-                (do row_ (span12_ [class_ "col-md-12"] (do h1_ "News"))
+                (do row_ (span12_ [class_ "col-sm-12"] (do h1_ "News"))
                     inner))

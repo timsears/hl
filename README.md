@@ -49,6 +49,19 @@ Install dependencies and build:
 
 Done!
 
+### CSS Assets
+
+In `static/source`, run:
+
+    $ npm install
+    $ bower install
+
+to install all the source libraries locally (you need [nodejs](https://nodejs.org) installed). Then:
+
+    $ gulp css
+
+to create a new CSS file (automatically creates a minified version as well).
+
 ## Running
 
 It runs at: http://localhost:1990/
