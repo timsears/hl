@@ -92,7 +92,7 @@ concurrent =
                   \  done <- newEmptyMVar\n\
                   \  forkIO (do putStrLn \"I'm one thread!\"\n\
                   \             putMVar done \"Done!\")\n\
-                  \  second <- forkIO (do delayThread 100000\n\
+                  \  second <- forkIO (do threadDelay 100000\n\
                   \                       putStrLn \"I'm another thread!\")\n\
                   \  killThread second\n\
                   \  msg <- takeMVar done\n\
