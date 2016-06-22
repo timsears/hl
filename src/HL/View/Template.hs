@@ -165,7 +165,7 @@ footer url r =
                                  span12_ [class_ "col-xs-12 visible-xs"] (br_ [])
                                  span8_ [class_ "col-sm-4 col-md-6 text-center"]
                                         (do br_ [class_ "visible-xs"]
-                                            span_ [class_ "item"] "Got changes to contribute? "
+                                            span_ [class_ "item"] "Got changes to contribute to the site? "
                                             br_ [class_ "visible-xs"]
                                             a_ [href_ "https://github.com/haskell-infra/hl"] "Fork or comment on Github"
                                             br_ [class_ "visible-xs"])
