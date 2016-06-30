@@ -53,7 +53,7 @@ header url =
   where branding = do br_ [class_ "hidden-xs"]
                       img_ [src_ (url (StaticR img_haskell_logo_svg)), class_ "img-responsive"]
         summation =
-          h4_ [class_ "summary"] "An advanced purely-functional programming language"
+          h4_ [class_ "summary"] "A purely functional, advanced programming language"
         tag = do br_ [class_ "visible-xs visible-sm"]
                  h4_ [class_ "tag"] "Declarative, statically typed code."
         sample =
