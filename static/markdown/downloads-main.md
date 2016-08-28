@@ -98,7 +98,7 @@ three are repeated here:
 - [Windows](http://docs.haskellstack.org/en/stable/install_and_upgrade/#windows)
 
 Instructions for other Linux distributions, including Debian, Fedora, Red Hat,
-Nix OS, and Arch Linux, are also available.
+NixOS, and Arch Linux, are also available.
 
 ### Where to get help <a name="stackhelp"></a>
 
